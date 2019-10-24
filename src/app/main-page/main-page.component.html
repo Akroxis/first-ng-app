@@ -1,0 +1,4 @@
+<div class="main-page__container">
+  <app-input-default (cityChosen)="onCitySet($event)"></app-input-default>
+  <app-result-table [weatherInfo]="currentCityWeatherInfo" *ngIf="currentCityWeatherInfo.name"></app-result-table>
+</div>

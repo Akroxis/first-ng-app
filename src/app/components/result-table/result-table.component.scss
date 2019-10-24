@@ -1,0 +1,49 @@
+.result-table__container {
+  margin: 0 auto;
+  width: 640px;
+
+  .city-title {
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+
+  .weather-content {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    cursor: pointer;
+    .info-row {
+      display: flex;
+      flex-flow: row nowrap;
+      width: 100%;
+      justify-content: space-between;
+      height: 100%;
+      font-size: 18px;
+      background-color: DodgerBlue;
+      color: white;
+      border-bottom: 1px solid lightcyan;
+      border-radius: 5px;
+      .row-title {
+        padding: 5px 0 5px 10px;
+        border-right: 1px solid lightcyan;
+        width: 50%;
+      }
+
+      .row-value {
+        padding: 5px 10px 5px 0;
+      }
+    }
+    .info-row:hover {
+      background-color: white;
+      color: DodgerBlue;
+      border: 1px solid DodgerBlue;
+
+      .row-title {
+        border-right: 1px solid DodgerBlue;
+      }
+    }
+  }
+}
