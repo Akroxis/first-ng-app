@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-input-default',
@@ -7,13 +7,19 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 })
 export class InputDefaultComponent implements OnInit {
   inputValue: string;
+  @Input() error: boolean;
   @Output() cityChosen = new EventEmitter<string>();
+  @ViewChild('search', { static: true }) searchElement: ElementRef;
   constructor() { }
 
   ngOnInit() {
+    this.setFocusOnInput();
   }
 
-  setCity(city) {
+  setCity(city): void {
     this.cityChosen.emit(city);
+  }
+  setFocusOnInput(): void {
+    this.searchElement.nativeElement.focus();
   }
 }

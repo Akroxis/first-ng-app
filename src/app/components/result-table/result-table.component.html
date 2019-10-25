@@ -1,17 +1,23 @@
 <div class="result-table__container">
-  <div class="city-title">{{weatherInfo.name}}, {{weatherInfo.sys.country}}</div>
-  <div class="weather-content">
-    <div class="info-row temperature">
-      <div class="row-title">Temperature</div>
-      <div class="row-value">{{weatherInfo.main.temp | toCelsius}}</div>
+  <div class="successfully-loaded-city-info__container" *ngIf="!error">
+    <div class="city-title">{{weatherInfo.name}}, {{weatherInfo.sys.country}}</div>
+    <div class="weather-content">
+      <div class="info-row temperature">
+        <div class="row-title">Temperature</div>
+        <div class="row-value">{{weatherInfo.main.temp | toCelsius}}</div>
+      </div>
+      <div class="info-row humidity">
+        <div class="row-title">Humidity</div>
+        <div class="row-value">{{weatherInfo.main.humidity}}</div>
+      </div>
+      <div class="info-row pressure">
+        <div class="row-title">Pressure</div>
+        <div class="row-value">{{weatherInfo.main.pressure}}</div>
+      </div>
     </div>
-    <div class="info-row humidity">
-      <div class="row-title">Humidity</div>
-      <div class="row-value">{{weatherInfo.main.humidity}}</div>
-    </div>
-    <div class="info-row pressure">
-      <div class="row-title">Pressure</div>
-      <div class="row-value">{{weatherInfo.main.pressure}}</div>
-    </div>
+  </div>
+  <div class="aborted-load-city-info__error-container" *ngIf="error">
+    <h3>{{error}}</h3>
+    <span>{{errorHintText}}</span>
   </div>
 </div>

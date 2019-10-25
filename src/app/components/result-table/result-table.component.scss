@@ -18,9 +18,9 @@
     .info-row {
       display: flex;
       flex-flow: row nowrap;
-      width: 100%;
+      width: auto;
       justify-content: space-between;
-      height: 100%;
+      height: auto;
       font-size: 18px;
       background-color: DodgerBlue;
       color: white;
@@ -29,21 +29,40 @@
       .row-title {
         padding: 5px 0 5px 10px;
         border-right: 1px solid lightcyan;
+        background-color: rgba(27,82,103,0.52);
         width: 50%;
+        box-sizing: border-box;
       }
 
       .row-value {
+        width: 50%;
         padding: 5px 10px 5px 0;
+        text-align: end;
       }
     }
     .info-row:hover {
       background-color: white;
       color: DodgerBlue;
-      border: 1px solid DodgerBlue;
 
       .row-title {
-        border-right: 1px solid DodgerBlue;
+        //border-right: 1px solid DodgerBlue;
+        color: black;
       }
+
+      .row-value {
+        border: 1px solid DodgerBlue;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+    }
+  }
+
+  .aborted-load-city-info__error-container {
+    margin: 0 auto;
+    text-align: center;
+
+    h3 {
+      color: red;
     }
   }
 }

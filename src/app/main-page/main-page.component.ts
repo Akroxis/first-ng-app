@@ -8,18 +8,21 @@ import requesterService from '../services/requester.service';
   providers: [requesterService]
 })
 export class MainPageComponent implements OnInit {
-  currentCityWeatherInfo = {};
+  currentCityWeatherInfo: object;
+  errorInfo: string;
   constructor(private requester: requesterService) { }
 
   ngOnInit() {
   }
 
   onCitySet(city: string) {
+    this.currentCityWeatherInfo = null;
+    this.errorInfo = '';
     this.requester.getActualData(city).subscribe(
       data => {
-        console.log(data);
         this.currentCityWeatherInfo = data;
       },
+      error => this.errorInfo = error.statusText
     );
   }
 }

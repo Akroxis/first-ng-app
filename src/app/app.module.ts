@@ -9,6 +9,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {TemperaturePipe} from './pipes/temperature.pipe';
+import { RowElementComponent } from './components/row-element/row-element.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {TemperaturePipe} from './pipes/temperature.pipe';
     InputDefaultComponent,
     ResultTableComponent,
     MainPageComponent,
-    TemperaturePipe
+    TemperaturePipe,
+    RowElementComponent
   ],
   imports: [
     BrowserModule,

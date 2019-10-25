@@ -1,4 +1,13 @@
 <div class="main-page__container">
-  <app-input-default (cityChosen)="onCitySet($event)"></app-input-default>
-  <app-result-table [weatherInfo]="currentCityWeatherInfo" *ngIf="currentCityWeatherInfo.name"></app-result-table>
+  <app-input-default
+    (cityChosen)="onCitySet($event)"
+    [error]="!!errorInfo"
+  >
+  </app-input-default>
+  <app-result-table
+    [weatherInfo]="currentCityWeatherInfo"
+    [error]="errorInfo"
+    *ngIf="currentCityWeatherInfo || errorInfo"
+  >
+  </app-result-table>
 </div>
